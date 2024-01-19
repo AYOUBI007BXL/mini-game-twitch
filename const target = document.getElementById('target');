@@ -1,0 +1,18 @@
+const target = document.getElementById('target');
+const scoreValue = document.getElementById('score-value');
+
+let score = 0;
+
+target.addEventListener('click', () => {
+  score++;
+  scoreValue.textContent = score;
+  moveTarget();
+});
+
+function moveTarget() {
+  const newX = Math.random() * (window.innerWidth - 50);
+  const newY = Math.random() * (window.innerHeight - 50);
+
+  target.style.left = `${newX}px`;
+  target.style.top = `${newY}px`;
+}
